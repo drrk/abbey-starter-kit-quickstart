@@ -31,20 +31,20 @@ resource "abbey_grant_kit" "abbey_demo_site" {
     steps = [
       {
         reviewers = {
-          one_of = ["replace-me@example.com"] # CHANGEME
+          one_of = ["kimball@bowerham.net"]
         }
       }
     ]
   }
 
   policies = [
-    { bundle = "github://replace-me-with-organization/replace-me-with-repo/policies" } # CHANGEME
+    { bundle = "github://drrk/abbey-starter-kit-quickstart/policies" }
   ]
 
   output = {
     # Replace with your own path pointing to where you want your access changes to manifest.
     # Path is an RFC 3986 URI, such as `github://{organization}/{repo}/path/to/file.tf`.
-    location = "github://replace-me-with-organization/replace-me-with-repo/access.tf" # CHANGEME
+    location = "github://drrk/abbey-starter-kit-quickstart/access.tf"
     append = <<-EOT
       resource "abbey_demo" "grant_read_write_access" {
         permission = "read_write"
